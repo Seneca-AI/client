@@ -1,0 +1,62 @@
+var helpers = require("../../../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require('materialize-css/dist/css/materialize.min.css');
+  require('../styles/App.css');
+  var _jsxFileName = "/Users/alexanderlenz/Library/Mobile Documents/com~apple~CloudDocs/CIS197/seneca/src/components/logInPage.js";
+  const LogIn = () => /*#__PURE__*/_reactDefault.default.createElement("div", {
+    className: "container valign-wrapper",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6,
+      columnNumber: 3
+    }
+  }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+    className: "row center-align",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7,
+      columnNumber: 5
+    }
+  }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+    className: "col",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 7
+    }
+  }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+    className: "center-align",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/_reactDefault.default.createElement("a", {
+    href: "/auth/google",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 38
+    }
+  }, "Sign In with Google")))));
+  _c = LogIn;
+  exports.default = LogIn;
+  var _c;
+  $RefreshReg$(_c, "LogIn");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,25 @@
+var helpers = require("../../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  require('./styles/index.css');
+  var _App = require('./App');
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  var _AppDefault = _parcelHelpers.interopDefault(_App);
+  var _jsxFileName = "/Users/alexanderlenz/Library/Mobile Documents/com~apple~CloudDocs/CIS197/seneca/src/index.js";
+  const React = require('react');
+  const ReactDOM = require('react-dom');
+  ReactDOM.render(/*#__PURE__*/React.createElement(_AppDefault.default, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7,
+      columnNumber: 17
+    }
+  }), document.getElementById('root'));
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

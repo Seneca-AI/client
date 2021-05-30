@@ -1,0 +1,154 @@
+var helpers = require("../../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  require('./styles/App.css');
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRouterDom = require('react-router-dom');
+  var _componentsHomePage = require('./components/homePage');
+  var _componentsHomePageDefault = _parcelHelpers.interopDefault(_componentsHomePage);
+  var _componentsLogInPage = require('./components/logInPage');
+  var _componentsLogInPageDefault = _parcelHelpers.interopDefault(_componentsLogInPage);
+  var _componentsSignUpPage = require('./components/signUpPage');
+  var _componentsSignUpPageDefault = _parcelHelpers.interopDefault(_componentsSignUpPage);
+  var _jsxFileName = "/Users/alexanderlenz/Library/Mobile Documents/com~apple~CloudDocs/CIS197/seneca/src/App.js", _s = $RefreshSig$();
+  const axios = require('axios');
+  const App = () => {
+    _s();
+    const [loggedIn, setLoggedIn] = _react.useState(false);
+    const [user, setUser] = _react.useState({});
+    const [loading, setLoading] = _react.useState(true);
+    const [drivingSnapshots, setDrivingSnapshots] = _react.useState([]);
+    const fetchLoginStatus = async () => axios.get('/auth/isLoggedIn').then(res => {
+      setLoggedIn(res.data);
+    });
+    const fetchDrivingSnapshots = async () => axios.get('/auth/drivingSnapshots').then(res => {
+      setDrivingSnapshots(res.data);
+    });
+    const fetchUser = async () => axios.get('/auth/user').then(res => {
+      if (res.data !== false) {
+        setUser(res.data);
+      } else {
+        setUser({});
+      }
+    });
+    const startLoadingData = async () => {
+      await fetchLoginStatus();
+      await fetchUser();
+      await fetchDrivingSnapshots();
+      setLoading(false);
+    };
+    _react.useEffect(() => {
+      setInterval(() => {
+        startLoadingData();
+      }, 1000);
+    }, []);
+    const dataCallBack = async () => {
+      setLoading(true);
+      await startLoadingData();
+      return {
+        loggedIn,
+        user
+      };
+    };
+    if (loading) {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h1", {
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54,
+            columnNumber: 9
+          }
+        }, "Loading data..."))
+      );
+    }
+    const component = loggedIn ? /*#__PURE__*/_reactDefault.default.createElement(_componentsHomePageDefault.default, {
+      user: user,
+      drivingSnapshots: drivingSnapshots,
+      dataCallBack: dataCallBack,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59,
+        columnNumber: 7
+      }
+    }) : /*#__PURE__*/_reactDefault.default.createElement(_componentsLogInPageDefault.default, {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60,
+        columnNumber: 7
+      }
+    });
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Switch, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/",
+        exact: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65,
+          columnNumber: 11
+        }
+      }, component), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+        path: "/signup/:userId",
+        exact: true,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_componentsSignUpPageDefault.default, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70,
+          columnNumber: 13
+        }
+      })))))
+    );
+  };
+  _s(App, "EJpmcok8UAhVnYiu5QxQQTKlGpg=");
+  _c = App;
+  exports.default = App;
+  var _c;
+  $RefreshReg$(_c, "App");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,381 @@
+var helpers = require("../../../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  require('materialize-css/dist/css/materialize.min.css');
+  require('../styles/App.css');
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _fab = require('./fab');
+  var _fabDefault = _parcelHelpers.interopDefault(_fab);
+  var _bar = require('./bar');
+  var _barDefault = _parcelHelpers.interopDefault(_bar);
+  var _jsxFileName = "/Users/alexanderlenz/Library/Mobile Documents/com~apple~CloudDocs/CIS197/seneca/src/components/homePage.js";
+  const Home = props => {
+    const {user, drivingSnapshots, dataCallBack} = props;
+    const vehicle = ` ${user.year} ${user.make} ${user.model}`;
+    const residence = ` ${user.city}, ${user.state} ${user.zip}`;
+    const dates = [];
+    const scores = [];
+    let speedingCount = 0;
+    let laneAdherence = 0;
+    let tailGatingCount = 0;
+    let totalScore = 0;
+    let totalDistance = -1;
+    drivingSnapshots.sort((a, b) => Date.parse(a.date) > Date.parse(b.date) ? 1 : Date.parse(b.date) > Date.parse(a.date) ? -1 : 0);
+    if (drivingSnapshots.length > 0) {
+      totalDistance = drivingSnapshots.map(snap => snap.milesDriven).reduce((a, b) => a + b);
+      drivingSnapshots.forEach(snap => {
+        dates.push(snap.date);
+        scores.push(snap.score);
+        speedingCount += snap.speedingCount;
+        tailGatingCount += snap.tailGatingCount;
+        laneAdherence += ~~(snap.laneAdherence / drivingSnapshots.length);
+        totalScore += ~~(snap.score / drivingSnapshots.length);
+      });
+    }
+    const startDate = drivingSnapshots[0].date;
+    const scoreData = {
+      date: dates,
+      score: scores
+    };
+    const DriverInfo = () => /*#__PURE__*/_reactDefault.default.createElement("div", {
+      className: "card col m5 s12 left",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44,
+        columnNumber: 5
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+      className: "card-title",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45,
+        columnNumber: 7
+      }
+    }, "Driver Information"), /*#__PURE__*/_reactDefault.default.createElement("table", {
+      className: "card-content",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("tbody", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("tr", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 49,
+        columnNumber: 13
+      }
+    }, "Name:"), /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50,
+        columnNumber: 13
+      }
+    }, user.displayName)), /*#__PURE__*/_reactDefault.default.createElement("tr", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53,
+        columnNumber: 13
+      }
+    }, "Vehicle:"), /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54,
+        columnNumber: 13
+      }
+    }, vehicle)), /*#__PURE__*/_reactDefault.default.createElement("tr", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57,
+        columnNumber: 13
+      }
+    }, "Residence:"), /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58,
+        columnNumber: 13
+      }
+    }, residence)), /*#__PURE__*/_reactDefault.default.createElement("tr", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61,
+        columnNumber: 13
+      }
+    }, "Policy Start Date:"), /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62,
+        columnNumber: 13
+      }
+    }, " ", startDate, " ")), /*#__PURE__*/_reactDefault.default.createElement("tr", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 64,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65,
+        columnNumber: 13
+      }
+    }, "Distance Driven:"), /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66,
+        columnNumber: 13
+      }
+    }, totalDistance, " Miles")))));
+    const SafetyInfo = () => /*#__PURE__*/_reactDefault.default.createElement("div", {
+      className: "card col m5 s12 right",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 74,
+        columnNumber: 5
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("span", {
+      className: "card-title",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 75,
+        columnNumber: 7
+      }
+    }, "Safety Information"), /*#__PURE__*/_reactDefault.default.createElement("table", {
+      className: "card-content",
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 76,
+        columnNumber: 7
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("tbody", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 77,
+        columnNumber: 9
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("tr", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 78,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 79,
+        columnNumber: 13
+      }
+    }, "Driver Rating:"), /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 80,
+        columnNumber: 13
+      }
+    }, totalScore)), /*#__PURE__*/_reactDefault.default.createElement("tr", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 82,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83,
+        columnNumber: 13
+      }
+    }, "Speeding Count:"), /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 84,
+        columnNumber: 13
+      }
+    }, speedingCount)), /*#__PURE__*/_reactDefault.default.createElement("tr", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 86,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 87,
+        columnNumber: 13
+      }
+    }, "Tailgating Count:"), /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 88,
+        columnNumber: 13
+      }
+    }, tailGatingCount)), /*#__PURE__*/_reactDefault.default.createElement("tr", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 90,
+        columnNumber: 11
+      }
+    }, /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 91,
+        columnNumber: 13
+      }
+    }, "Lane Adherence:"), /*#__PURE__*/_reactDefault.default.createElement("td", {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 92,
+        columnNumber: 13
+      }
+    }, laneAdherence, "/100")))));
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "container",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_fabDefault.default, {
+        dataCallBack: dataCallBack,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101,
+          columnNumber: 7
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row center",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(DriverInfo, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 103,
+          columnNumber: 9
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement(SafetyInfo, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104,
+          columnNumber: 9
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row center",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 106,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+        className: "white-text",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107,
+          columnNumber: 9
+        }
+      }, " Driver Safety Score ")), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_barDefault.default, {
+        labelData: scoreData.date,
+        scoreData: scoreData.score,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 110,
+          columnNumber: 9
+        }
+      })))
+    );
+  };
+  _c = Home;
+  exports.default = Home;
+  var _c;
+  $RefreshReg$(_c, "Home");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

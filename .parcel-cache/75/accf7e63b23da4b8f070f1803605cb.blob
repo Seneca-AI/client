@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seneca</title>
+    <link rel="stylesheet" href="37445e0b0a3b0ccedca2840dcfde09dc">
+    <link href="86aa15981319cfec1113c0b09df64845" rel="stylesheet">
+    <script src="76ae051cb8f4aa40cd42d6e2f2fa1b94"></script>
+    <script src="0cb5d1d8ff4595e127ac77dbbfa8a12f" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="f9dd467721f3037dec75a0f18aad8d4b" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="d3ad592268d014a64eef7f04be160997" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="f194dc38f103b83fcda30a52968f48c8"></script>
+  </body>
+</html>
+
+<!--Ensure I do not include too much in HTML. Pare down as much as possible-->

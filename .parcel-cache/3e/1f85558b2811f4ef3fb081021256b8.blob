@@ -1,0 +1,108 @@
+var helpers = require("../../../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactTinyFab = require('react-tiny-fab');
+  require('react-tiny-fab/dist/styles.css');
+  var _axios = require('axios');
+  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+  var _jsxFileName = "/Users/alexanderlenz/Library/Mobile Documents/com~apple~CloudDocs/CIS197/seneca/src/components/fab.js";
+  const FAB = props => {
+    const styles = {
+      top: 0,
+      left: 0
+    };
+    const mainButtonStyles = {
+      backgroundColor: '#818EC6'
+    };
+    const handleLogOut = async e => {
+      e.preventDefault();
+      const response = await _axiosDefault.default.get('/auth/logout');
+      if (response) {
+        await props.dataCallBack();
+      }
+    };
+    const handleContact = e => {
+      e.preventDefault();
+      window.location = 'mailto:lenz@wharton.upenn.edu';
+    };
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement(_reactTinyFab.Fab, {
+        mainButtonStyles: mainButtonStyles,
+        style: styles,
+        icon: /*#__PURE__*/_reactDefault.default.createElement("i", {
+          className: "material-icons",
+          __self: undefined,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 13
+          }
+        }, "menu"),
+        alwaysShowTitle: true,
+        onClick: () => {
+          console.log('clicked');
+        },
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(_reactTinyFab.Action, {
+        style: {
+          backgroundColor: '#818EC6'
+        },
+        text: "Contact Us",
+        onClick: handleContact,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "material-icons",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46,
+          columnNumber: 9
+        }
+      }, "contact_support")), /*#__PURE__*/_reactDefault.default.createElement(_reactTinyFab.Action, {
+        style: {
+          backgroundColor: '#818EC6'
+        },
+        text: "Logout",
+        onClick: handleLogOut,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "material-icons",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54,
+          columnNumber: 9
+        }
+      }, "logout")))
+    );
+  };
+  _c = FAB;
+  exports.default = FAB;
+  var _c;
+  $RefreshReg$(_c, "FAB");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

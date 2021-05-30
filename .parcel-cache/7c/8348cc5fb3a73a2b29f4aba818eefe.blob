@@ -1,0 +1,101 @@
+var helpers = require("../../../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactChartjs = require('react-chartjs-2');
+  var _propTypes = require('prop-types');
+  var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
+  var _jsxFileName = "/Users/alexanderlenz/Library/Mobile Documents/com~apple~CloudDocs/CIS197/seneca/src/components/bar.js";
+  const Bar = ({labelData, scoreData}) => {
+    const data = canvas => {
+      const ctx = canvas.getContext('2d');
+      const gradient = ctx.createLinearGradient(63, 81, 181, 700);
+      gradient.addColorStop(0, '#929dd9');
+      gradient.addColorStop(1, '#172b4d');
+      return {
+        labels: labelData,
+        datasets: [{
+          label: 'Safety Score',
+          data: scoreData,
+          backgroundColor: gradient,
+          borderColor: '#3F51B5',
+          pointRadius: 6,
+          pointHoverRadius: 8,
+          pointHoverBorderColor: 'white',
+          pointHoverBorderWidth: 2
+        }]
+      };
+    };
+    const options = {
+      responsive: true,
+      scales: {
+        xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Date',
+            fontSize: 18,
+            fontColor: 'white'
+          },
+          gridLines: {
+            display: false,
+            color: 'white'
+          },
+          ticks: {
+            fontColor: 'white',
+            fontSize: 16
+          }
+        }],
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Safety Score',
+            fontSize: 18,
+            fontColor: 'white'
+          },
+          gridLines: {
+            display: false,
+            color: 'white'
+          },
+          ticks: {
+            fontColor: 'white',
+            fontSize: 16,
+            beginAtZero: true
+          }
+        }]
+      },
+      tooltips: {
+        titleFontSize: 13,
+        bodyFontSize: 13
+      }
+    };
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/_reactDefault.default.createElement(_reactChartjs.Line, {
+        data: data,
+        options: options,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83,
+          columnNumber: 7
+        }
+      }))
+    );
+  };
+  _c = Bar;
+  Bar.propTypes = {
+    labelData: _propTypesDefault.default.array,
+    scoreData: _propTypesDefault.default.array
+  };
+  exports.default = Bar;
+  var _c;
+  $RefreshReg$(_c, "Bar");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

@@ -1,0 +1,459 @@
+var helpers = require("../../../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRouterDom = require('react-router-dom');
+  require('materialize-css/dist/css/materialize.min.css');
+  require('../styles/App.css');
+  var _jsxFileName = "/Users/alexanderlenz/Library/Mobile Documents/com~apple~CloudDocs/CIS197/seneca/src/components/signUpPage.js", _s = $RefreshSig$();
+  const axios = require('axios');
+  const SignUp = () => {
+    _s();
+    const [phoneNumber, setPhoneNumber] = _react.useState('');
+    const [dob, setDOB] = _react.useState('');
+    const [make, setMake] = _react.useState('');
+    const [model, setModel] = _react.useState('');
+    const [year, setYear] = _react.useState('');
+    const [city, setCity] = _react.useState('');
+    const [state, setState] = _react.useState('');
+    const [zip, setZip] = _react.useState('');
+    const [url, setUrl] = _react.useState('');
+    const {userId} = _reactRouterDom.useParams();
+    const history = _reactRouterDom.useHistory();
+    const handleSubmit = async e => {
+      e.preventDefault();
+      const body = {
+        phoneNumber,
+        dob,
+        make,
+        model,
+        year,
+        city,
+        state,
+        zip,
+        url,
+        userId
+      };
+      await axios.post('/auth/submitSignUp', body);
+      history.replace('/');
+    };
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "col s12 m12 l6",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42,
+          columnNumber: 5
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "card-panel",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("h4", {
+        className: "header2",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44,
+          columnNumber: 9
+        }
+      }, "Sign Up"), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("form", {
+        className: "col s12",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "input-field col s12",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "mdi-action-account-circle prefix",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49,
+          columnNumber: 17
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("input", {
+        placeholder: "Phone Number",
+        type: "tel",
+        id: "phone",
+        value: phoneNumber,
+        onChange: e => setPhoneNumber(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50,
+          columnNumber: 17
+        }
+      }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "input-field col s12",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "mdi-communication-email prefix",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55,
+          columnNumber: 17
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("input", {
+        placeholder: "Date of Birth",
+        id: "dob",
+        type: "date",
+        value: dob,
+        onChange: e => setDOB(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56,
+          columnNumber: 17
+        }
+      }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "input-field col s12",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "mdi-communication-email prefix",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 61,
+          columnNumber: 17
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("input", {
+        placeholder: "Vehicle Make",
+        id: "make",
+        type: "text",
+        value: make,
+        onChange: e => setMake(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62,
+          columnNumber: 17
+        }
+      }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "input-field col s12",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "mdi-communication-email prefix",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67,
+          columnNumber: 17
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("input", {
+        placeholder: "Vehicle Model",
+        id: "model",
+        type: "text",
+        value: model,
+        onChange: e => setModel(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68,
+          columnNumber: 17
+        }
+      }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "input-field col s12",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "mdi-communication-email prefix",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73,
+          columnNumber: 17
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("input", {
+        placeholder: "Vehicle Year",
+        id: "year",
+        type: "number",
+        value: year,
+        onChange: e => setYear(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 74,
+          columnNumber: 17
+        }
+      }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "input-field col s12",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 78,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "mdi-communication-email prefix",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79,
+          columnNumber: 17
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("input", {
+        placeholder: "City",
+        id: "city",
+        type: "text",
+        value: city,
+        onChange: e => setCity(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80,
+          columnNumber: 17
+        }
+      }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "input-field col s12",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 84,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "mdi-action-lock-outline prefix",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 85,
+          columnNumber: 17
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("input", {
+        placeholder: "State",
+        id: "state",
+        type: "text",
+        value: state,
+        onChange: e => setState(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 86,
+          columnNumber: 17
+        }
+      }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 89,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "input-field col s12",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 90,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "mdi-action-lock-outline prefix",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91,
+          columnNumber: 17
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("input", {
+        id: "zip",
+        placeholder: "Zip Code",
+        type: "number",
+        value: zip,
+        onChange: e => setZip(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92,
+          columnNumber: 17
+        }
+      }))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 95,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "input-field col s12",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "mdi-action-question-answer prefix",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97,
+          columnNumber: 17
+        }
+      }), /*#__PURE__*/_reactDefault.default.createElement("input", {
+        id: "url",
+        placeholder: "Google Drive Url",
+        type: "url",
+        value: url,
+        onChange: e => setUrl(e.target.value),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98,
+          columnNumber: 17
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "row",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100,
+          columnNumber: 15
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "input-field col s12",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101,
+          columnNumber: 17
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement("button", {
+        className: "btn cyan waves-effect waves-light right",
+        type: "button",
+        name: "action",
+        onClick: handleSubmit,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102,
+          columnNumber: 19
+        }
+      }, "Submit", /*#__PURE__*/_reactDefault.default.createElement("i", {
+        className: "mdi-content-send right",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104,
+          columnNumber: 21
+        }
+      })))))))))
+    );
+  };
+  _s(SignUp, "chGbzEBCWb1+s6/lqWuhjdzW74E=", false, function () {
+    return [_reactRouterDom.useParams, _reactRouterDom.useHistory];
+  });
+  _c = SignUp;
+  exports.default = SignUp;
+  var _c;
+  $RefreshReg$(_c, "SignUp");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
